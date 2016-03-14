@@ -1,3 +1,13 @@
+```
+Judges: kablaa
+
+jump on that gator. below file running at
+
+nc 4.31.182.242 9003
+
+flag is in "/home/arr/flag"
+```
+
 At first the program asks for our name and reads it using `scanf("%9s",&name);`
 
 After that it creates an array with 10 integers, sets them to 0 and asks for index and value 10 times and finally prints the values of these 10 array elements. If we enter an index bigger than or equal to 10 it exits with `exit(0)`. However it does not check wether we gave negative index or not. So for example if we give -1 index and -10 value, we can make the counter -10 and enter 20 values instead of 10. And also if we enter `-2147483648 + x` as index that would be smaller than 10 but it would access `arr[x]` due to integer overflow. So by using that we can change anywhere we want in the stack.
