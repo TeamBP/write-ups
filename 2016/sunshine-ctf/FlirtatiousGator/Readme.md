@@ -23,7 +23,9 @@ Address of system is `0x08048430` (also we can find it using any disassembler)
 
 We will change the return address to scanf and give its parameters using stack. After that we need to call system, so we need a pop,pop,ret in order to pass the arguments of scanf. We can find it using `ROPgadget --binary arr`.
 
+```
 Address of pop,pop,ret is `0x080487ba`
+```
 
 So now we can form our stack:
 
