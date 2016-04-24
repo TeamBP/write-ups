@@ -20,7 +20,7 @@ mod = meta.decompile(code)
 source = meta.dump_python_source(mod)
 ```
 
-Here the source variable is the string of the .py file which can be seen [here.](solution.py)
+Here the source variable is the string of the .py file which can be seen [here.](server.py)
 
 By inspecting this file first we spot the cPickle. The script reads the `sesion['auth']` from cookie(encrypted but we have the key at the bottom of the code) and loads it. So now we can use pickle exploit. For signing the pickle I run my own server using flask and the same key and copied the crafted cookie.
 
